@@ -8,18 +8,18 @@ namespace PixelCrew.Creature
     public class Creature : MonoBehaviour
     {
         [SerializeField] protected StayInLayer _isGrouning;
+        [SerializeField] private Timer.Timer _timerForDamageLazer;
         [SerializeField] private float speed = 1;
         protected Vector2 _direction;
+        protected bool _isJumping;
         protected Rigidbody2D _rigidbody;
         private Animator _animatorCreature;
         private static readonly int IsRunning = Animator.StringToHash("isRunning");
         private static readonly int IsGrounding = Animator.StringToHash("isGrounding");
         private static readonly int IsJumping = Animator.StringToHash("isJumping");
         private static readonly int velocityY = Animator.StringToHash("velocityY");
+        private static readonly int velocityX = Animator.StringToHash("velocityX");
         private float _scaleCharoctor = 1.6f;
- 
-
-
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
@@ -44,7 +44,13 @@ namespace PixelCrew.Creature
             _rigidbody.velocity = new Vector2(CalculateMovementHeroX(), _rigidbody.velocity.y);
         }
 
-        
+        public void takeDamage()
+        {
+            _isJumping = false;
+            _rigidbody.velocity = new Vector2(-_rigidbody.velocity.x, _rigidbody.velocity.y);
+            _timerForDamageLazer.Reset();
+
+        }
 
         private void InvertScale()
         {
@@ -60,7 +66,13 @@ namespace PixelCrew.Creature
 
         protected float CalculateMovementHeroX()
         {
-            return _direction.x * speed;
+            var velocityX = _rigidbody.velocity.x;
+            if (_timerForDamageLazer.checkTimer)
+            {
+                velocityX = _direction.x * speed;
+            }
+                
+            return velocityX;
         }
 
         private void SetAnimation()
@@ -69,7 +81,13 @@ namespace PixelCrew.Creature
             _animatorCreature.SetBool(IsJumping,_direction.y > 0);
             _animatorCreature.SetBool(IsGrounding,_isGrouning.isTrigger );
             _animatorCreature.SetFloat(velocityY, _rigidbody.velocity.y);
-        } 
+            _animatorCreature.SetInteger(velocityX, Mathf.RoundToInt(_rigidbody.velocity.x));
+        }
+
+        public void sprintMovement()
+        {
+            
+        }
     }
 
 }

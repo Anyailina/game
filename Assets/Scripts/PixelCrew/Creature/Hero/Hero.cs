@@ -6,7 +6,7 @@ namespace PixelCrew.Creature.Hero
 {
     public class Hero: Creature
     {
-        private bool _isJumping;
+        
         [SerializeField] private float speedJump = 1;
         
 

@@ -18,6 +18,13 @@ namespace PixelCrew.Utilits
             _hero?.SetDirection(direction);
 
         }
+        public void Sprint(InputAction.CallbackContext call)
+        {
+            if (call.performed)
+            {
+                _hero?.sprintMovement();
+            }
+        }
         
         
     }
