@@ -2,30 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e352c8a0-1baa-4c2b-bc75-1f5c59cb375d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ourGameWithYana/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ourGameWithYana/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ColliderBased/EnterCollision.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ColliderBased/EnterCollision.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ColliderBased/EnterTrigger.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ColliderBased/EnterTrigger.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Health.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Health/HealthComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Health/HealthComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Health/ModifyHealthComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Health/ModifyHealthComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Timer.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Timer/Timer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Timer/Timer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ourGameWithYana/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ourGameWithYana/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GG/AnimationGG/AnimatorHero.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GG/AnimationGG/AnimatorHero.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GG/AnimationGG/hit.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GG/AnimationGG/hit.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GG/Hero.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GG/Hero.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GG/HeroInputAction.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GG/HeroInputAction.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GG/AnimationGG/sprint.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GG/AnimationGG/sprint.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/lvl1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/lvl1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Creature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Creature.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Hero/Hero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Hero/Hero.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Utilits/HeroInputReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Utilits/HeroInputReader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/texture/GG.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/texture/GG.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/texture/GG/idle.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/texture/GG/idle.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/texture/3 Cyborg/Cyborg_run_attack.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/texture/3 Cyborg/Cyborg_run_attack.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,10 +68,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="1962">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="1962" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -105,6 +89,9 @@
       <updated>1680537053156</updated>
       <workItem from="1680537054711" duration="17557000" />
       <workItem from="1680596989360" duration="5474000" />
+      <workItem from="1680638163951" duration="191000" />
+      <workItem from="1680638361696" duration="15775000" />
+      <workItem from="1680785475218" duration="4816000" />
     </task>
     <servers />
   </component>
@@ -115,5 +102,24 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Hero/Hero.cs</url>
+          <line>78</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Hero/Hero.cs" initialLine="78" containingFunctionPresentation="method 'StartSprint'">
+            <startOffsets>
+              <option value="2171" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2171" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

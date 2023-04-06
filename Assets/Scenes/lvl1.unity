@@ -231,7 +231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136218515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.93, y: 2.45, z: -10}
+  m_LocalPosition: {x: 36.81, y: 7.41, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -619,7 +619,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.93, y: 2.45, z: -10}
+  m_LocalPosition: {x: 36.81, y: 7.41, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3321,7 +3321,6 @@ GameObject:
   - component: {fileID: 1290560484}
   - component: {fileID: 1290560483}
   - component: {fileID: 1290560487}
-  - component: {fileID: 1290560486}
   m_Layer: 0
   m_Name: lazer
   m_TagString: Untagged
@@ -3441,19 +3440,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1290560486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1290560482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec57f80a2c54a78b04b3ea9defa6d8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hp: -1
 --- !u!114 &1290560487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3470,29 +3456,17 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1290560486}
-        m_TargetAssemblyTypeName: PixelCrew.Health.ModifyHealthComponent, Assembly-CSharp
-        m_MethodName: applyDamage
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1738776193}
         m_TargetAssemblyTypeName: PixelCrew.Creature.Creature, Assembly-CSharp
-        m_MethodName: takeDamage
-        m_Mode: 1
+        m_MethodName: takeDamageLazer
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: -1
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1001 &1486165844
 PrefabInstance:
@@ -3503,6 +3477,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1649532967554056948, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
+      propertyPath: sprint
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649532967554056948, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
       propertyPath: speedJump
       value: 10
       objectReference: {fileID: 0}
@@ -3511,8 +3489,20 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1649532967554056948, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
+      propertyPath: _timerForSprint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649532967554056948, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
       propertyPath: _timerForDamageLazer
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649532967554056948, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
+      propertyPath: _timerForSprint._timer
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649532967554056948, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
+      propertyPath: _timerForDurationSprint
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1649532967554056948, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
       propertyPath: _timerForDamageLazer._timer
@@ -3524,11 +3514,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2855121744949286745, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.93
+      value: 36.81
       objectReference: {fileID: 0}
     - target: {fileID: 2855121744949286745, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.45
+      value: 7.41
       objectReference: {fileID: 0}
     - target: {fileID: 2855121744949286745, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3601,6 +3591,46 @@ PrefabInstance:
     - target: {fileID: 6007075712521382708, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344589518615069828, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344589518615069828, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: 86b7049b-fb93-46e8-9e5d-197796b5fa32
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344589518615069828, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: hero/Sprint[/Keyboard/shift]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344589518615069828, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344589518615069828, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344589518615069828, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2080523498}
+    - target: {fileID: 7344589518615069828, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344589518615069828, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Sprint
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344589518615069828, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PixelCrew.Utilits.HeroInputReader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344589518615069828, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3895,3 +3925,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2080523498 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3861187155191740254, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
+  m_PrefabInstance: {fileID: 1486165844}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d481894a6b942b180ee060d5541a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
