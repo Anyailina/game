@@ -21,10 +21,6 @@ namespace PixelCrew.ColliderBased
             _isTrigger = _collider.IsTouchingLayers(_layer); 
         }
 
-        private void OnDrawGizmos()
-        {
-
-            Debug.DrawLine(transform.position, Vector3.up, isTrigger ? Color.green : Color.red);
-        }
+       
     }
 }
