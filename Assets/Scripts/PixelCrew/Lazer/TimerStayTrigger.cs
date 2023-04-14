@@ -39,6 +39,7 @@ namespace PixelCrew.Laser
             isStay = false;
            
         }
+        // попробовать переделать через дельта тайм
 
         private void Update()
         {

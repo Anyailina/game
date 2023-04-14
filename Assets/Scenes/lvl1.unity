@@ -431,7 +431,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136218515}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.1, y: 2.39, z: -10}
+  m_LocalPosition: {x: 16.47, y: 2.16, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -993,7 +993,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.1, y: 2.39, z: -10}
+  m_LocalPosition: {x: 16.47, y: 2.16, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4036,6 +4036,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 171475613939805123, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 171475613939805123, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
@@ -4044,8 +4048,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1064201349}
     - target: {fileID: 1649532967554056948, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
+      propertyPath: _isClimbingCollider
+      value: 
+      objectReference: {fileID: 1064201349}
+    - target: {fileID: 1649532967554056948, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
+      propertyPath: _timerClimbing._timer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649532967554056948, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
       propertyPath: _timerForDurationSprint
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649532967554056948, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
+      propertyPath: _velocityFallDuringClimbing
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2855121744949286745, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
       propertyPath: m_RootOrder
@@ -4053,11 +4069,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2855121744949286745, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.1
+      value: 16.47
       objectReference: {fileID: 0}
     - target: {fileID: 2855121744949286745, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.39
+      value: 2.16
       objectReference: {fileID: 0}
     - target: {fileID: 2855121744949286745, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4091,6 +4107,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4008547034314976682, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
+      propertyPath: m_GravityScale
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4183212690225251914, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
       propertyPath: m_Name
       value: Hero
@@ -4102,6 +4122,10 @@ PrefabInstance:
     - target: {fileID: 6578384316183808716, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6578384316183808716, guid: c8b6b1db08ea44f7396679a5233108c4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

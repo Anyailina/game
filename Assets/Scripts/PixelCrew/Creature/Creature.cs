@@ -13,7 +13,6 @@ namespace PixelCrew.Creature
         [SerializeField] protected Timer.Timer _timerForDamageLazer;
         [SerializeField] protected float speed = 1;
         protected Vector2 _direction;
-        protected bool _isJumping;
         protected Rigidbody2D _rigidbody;
         protected Animator _animatorCreature;
         private static readonly int IsRunning = Animator.StringToHash("isRunning");
@@ -47,8 +46,9 @@ namespace PixelCrew.Creature
             _rigidbody.velocity = new Vector2(CalculateMovementHeroX(), _rigidbody.velocity.y);
         }
         
-        public  void changeVelocityLazer()
+        public void changeVelocityLazer()
         {
+           
             _timerForDamageLazer.Reset();
             _rigidbody.velocity = new Vector2(-_rigidbody.velocity.x, _rigidbody.velocity.y);
           
@@ -90,7 +90,7 @@ namespace PixelCrew.Creature
             return _direction.x * speed;
         }
 
-        private void SetAnimation()
+        protected virtual void SetAnimation()
         {
             _animatorCreature.SetBool(IsRunning,_direction.x != 0);
             _animatorCreature.SetBool(IsGrounding,_isGrouning.isTrigger );

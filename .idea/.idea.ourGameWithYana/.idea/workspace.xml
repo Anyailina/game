@@ -2,24 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e352c8a0-1baa-4c2b-bc75-1f5c59cb375d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Lazer.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Lazer/LazersMove.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Lazer/LazersMove.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Lazer/TimerStayTrigger.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Lazer/TimerStayTrigger.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ourGameWithYana/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ourGameWithYana/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GG/AnimationGG/AnimatorHero.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GG/AnimationGG/AnimatorHero.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GG/AnimationGG/sprint.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GG/AnimationGG/sprint.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GG/Hero.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GG/Hero.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GG/Hero.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GG/Hero.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/lvl1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/lvl1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ColliderBased/StayInLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ColliderBased/StayInLayer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Creature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Creature.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Hero/Hero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Hero/Hero.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Lazer/TimerStayTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Lazer/TimerStayTrigger.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Search.settings" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Search.settings" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,10 +68,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="1006">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="1006" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -101,7 +92,10 @@
       <workItem from="1680638163951" duration="191000" />
       <workItem from="1680638361696" duration="15775000" />
       <workItem from="1680785475218" duration="4816000" />
-      <workItem from="1681138384816" duration="10690000" />
+      <workItem from="1681138384816" duration="12879000" />
+      <workItem from="1681153832782" duration="22981000" />
+      <workItem from="1681313335901" duration="4046000" />
+      <workItem from="1681461612129" duration="5682000" />
     </task>
     <servers />
   </component>
