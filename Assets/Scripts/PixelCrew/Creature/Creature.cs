@@ -19,7 +19,7 @@ namespace PixelCrew.Creature
         private static readonly int IsGrounding = Animator.StringToHash("isGrounding");
         private static readonly int velocityY = Animator.StringToHash("velocityY");
         private static readonly int velocityX = Animator.StringToHash("velocityX");
-        private float _scaleCharoctor = 1.6f;
+        private float _scaleCharoctor = 1f;
         public bool _isSprinting;
        
         protected virtual void Awake()

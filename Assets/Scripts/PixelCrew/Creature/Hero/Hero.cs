@@ -136,9 +136,6 @@ namespace PixelCrew.Creature.Hero
 
         public void StartSprint()
         {
-           
-            if (_direction.x == 0 && _direction.y == 0) return;
-
             if (_direction.y > 0)
             {
                 _rigidbody.gravityScale = 0;
