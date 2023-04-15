@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e352c8a0-1baa-4c2b-bc75-1f5c59cb375d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ourGameWithYana/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ourGameWithYana/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/lvl1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/lvl1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Creature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Creature.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Hero/Hero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Hero/Hero.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +87,7 @@
       <workItem from="1681138384816" duration="12879000" />
       <workItem from="1681153832782" duration="22981000" />
       <workItem from="1681313335901" duration="4046000" />
-      <workItem from="1681461612129" duration="7991000" />
+      <workItem from="1681461612129" duration="8578000" />
     </task>
     <servers />
   </component>
