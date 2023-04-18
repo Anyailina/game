@@ -11,7 +11,7 @@ namespace PixelCrew.ColliderBased
         private void OnCollisionEnter2D(Collision2D col)
         {
             if(!string.IsNullOrEmpty(_tag) && !col.gameObject.CompareTag(_tag)) return;
-            ;
+            
             _action?.Invoke();
 
         }

@@ -2,7 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e352c8a0-1baa-4c2b-bc75-1f5c59cb375d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ColliderBased/CheckOverlap.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ColliderBased/CheckOverlap.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/MobAI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/MobAI.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/patrol.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/patrol/Patrol.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/patrol/Patrol.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/patrol/PatrolPoint.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/patrol/PatrolPoint.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ourGameWithYana/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ourGameWithYana/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GG/AnimationGG/AnimatorHero.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GG/AnimationGG/AnimatorHero.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GG/AnimationGG/idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GG/AnimationGG/idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GG/AnimationGG/sprint.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GG/AnimationGG/sprint.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/creature/Hero.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/creature/Hero.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/enviroment/Lazer.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/enviroment/Lazer.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/lvl1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/lvl1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ColliderBased/EnterCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ColliderBased/EnterCollision.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ColliderBased/StayInLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ColliderBased/StayInLayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Creature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Creature.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Hero/Hero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Hero/Hero.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,10 +84,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="30079">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="30079" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -87,7 +111,9 @@
       <workItem from="1681138384816" duration="12879000" />
       <workItem from="1681153832782" duration="22981000" />
       <workItem from="1681313335901" duration="4046000" />
-      <workItem from="1681461612129" duration="8578000" />
+      <workItem from="1681461612129" duration="20327000" />
+      <workItem from="1681673067817" duration="6448000" />
+      <workItem from="1681757496695" duration="7186000" />
     </task>
     <servers />
   </component>
@@ -98,5 +124,24 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/PixelCrew/ColliderBased/StayInLayer.cs</url>
+          <line>20</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ColliderBased/StayInLayer.cs" initialLine="21" containingFunctionPresentation="method 'OnTriggerStay2D'">
+            <startOffsets>
+              <option value="485" />
+            </startOffsets>
+            <endOffsets>
+              <option value="486" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

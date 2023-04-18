@@ -8,19 +8,19 @@ namespace PixelCrew.Creature
 {
     public class Creature : MonoBehaviour
     {
-        
-        [SerializeField] protected StayInLayer _isGrouning;
+        [SerializeField] private CheckOverlap _checkCanAttack;
         [SerializeField] protected Timer.Timer _timerForDamageLazer;
         [SerializeField] protected float speed = 1;
-        protected Vector2 _direction;
+        public Vector2 _direction;
         protected Rigidbody2D _rigidbody;
         protected Animator _animatorCreature;
         private static readonly int IsRunning = Animator.StringToHash("isRunning");
-        private static readonly int IsGrounding = Animator.StringToHash("isGrounding");
-        private static readonly int velocityY = Animator.StringToHash("velocityY");
+      
         private static readonly int velocityX = Animator.StringToHash("velocityX");
-        private float _scaleCharoctor = 1f;
+        private static readonly int attackCreature = Animator.StringToHash("isAttack");
         public bool _isSprinting;
+        private float _scaleCharoctor = 1f;
+        
        
         protected virtual void Awake()
         {
@@ -56,19 +56,17 @@ namespace PixelCrew.Creature
 
         }
 
-        public void takeDamageLazer(GameObject go)
+        public virtual void takeDamageLazer(GameObject go)
         {
-            if (!_isSprinting)
+
+            var damage = go.GetComponent<ModifyHealthComponent>();
+            if (damage != null)
             {
-                Debug.Log(1);
-                var damage = go.GetComponent<ModifyHealthComponent>();
-                if (damage != null)
-                {
-                    
-                    damage.applyDamage(gameObject);
-                }
-                    
+
+                damage.applyDamage(gameObject);
             }
+
+
         }
 
 
@@ -86,15 +84,23 @@ namespace PixelCrew.Creature
 
         protected virtual float CalculateMovementHeroX()
         {
-
             return _direction.x * speed;
+        }
+
+        public void attack()
+        {
+            _animatorCreature.SetTrigger(attackCreature);
+        }
+
+        public void DoAttackNextToCreature(){
+            
+            _checkCanAttack.check();
         }
 
         protected virtual void SetAnimation()
         {
             _animatorCreature.SetBool(IsRunning,_direction.x != 0);
-            _animatorCreature.SetBool(IsGrounding,_isGrouning.isTrigger );
-            _animatorCreature.SetFloat(velocityY, _rigidbody.velocity.y);
+           
             _animatorCreature.SetInteger(velocityX, Mathf.RoundToInt(_rigidbody.velocity.x));
         }
 

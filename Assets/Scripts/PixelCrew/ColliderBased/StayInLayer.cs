@@ -13,11 +13,19 @@ namespace PixelCrew.ColliderBased
 
         private void OnTriggerStay2D(Collider2D other)
         {
-            _isTrigger = _collider.IsTouchingLayers(_layer); 
+          
+            
+
+            _isTrigger = _collider.IsTouchingLayers(_layer);
+          
         }
+            
+            
+        
 
         private void OnTriggerExit2D(Collider2D other)
         {
+           
             _isTrigger = _collider.IsTouchingLayers(_layer); 
         }
 

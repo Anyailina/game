@@ -65,9 +65,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.03, y: -0.42}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.2746473
 --- !u!114 &8179560129229194806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,13 +95,13 @@ GameObject:
   - component: {fileID: 2855121744949286745}
   - component: {fileID: 8169937009990826006}
   - component: {fileID: 2607117057989501510}
-  - component: {fileID: 5466125381564159031}
   - component: {fileID: 4008547034314976682}
   - component: {fileID: 7344589518615069828}
   - component: {fileID: 3861187155191740254}
   - component: {fileID: 1649532967554056948}
   - component: {fileID: 4355536741924641229}
-  m_Layer: 0
+  - component: {fileID: 5103053580660406302}
+  m_Layer: 6
   m_Name: Hero
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -117,13 +117,13 @@ Transform:
   m_GameObject: {fileID: 4183212690225251914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6, y: 1.6, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6007075712521382708}
   - {fileID: 4230422357845798850}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8169937009990826006
 SpriteRenderer:
@@ -166,7 +166,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1256223441, guid: 11ff74d64acd04ccfb9a6d5bc38b8d13, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 25bd83da5ec5fe743ad82fe766982fb0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -197,65 +197,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!60 &5466125381564159031
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4183212690225251914}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.59375, y: 1.09375}
-    newSize: {x: 0.59375, y: 1.09375}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.122143194, y: 0.5369287}
-      - {x: -0.12742451, y: 0.30221748}
-      - {x: -0.30682138, y: 0.048956543}
-      - {x: -0.30395395, y: -0.14548767}
-      - {x: -0.18361236, y: -0.23903352}
-      - {x: -0.14587545, y: -0.36423388}
-      - {x: -0.14588857, y: -0.5433355}
-      - {x: 0.296875, y: -0.546875}
-      - {x: 0.2620627, y: 0.051915914}
-      - {x: 0.25695553, y: 0.27622786}
-      - {x: 0.14767954, y: 0.342304}
-      - {x: 0.1737872, y: 0.37791502}
-      - {x: 0.18829885, y: 0.49945673}
-      - {x: 0.1065208, y: 0.55176634}
-  m_UseDelaunayMesh: 0
 --- !u!50 &4008547034314976682
 Rigidbody2D:
   serializedVersion: 4
@@ -271,7 +212,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 3.5
   m_Material: {fileID: 6200000, guid: 3e838dda6e18e457289c079b91f0dc02, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -373,9 +314,16 @@ MonoBehaviour:
   _timerForDamageLazer:
     _timer: 0.5
   speed: 5
-  _timerForDurationSprint: 0.5
+  _isSprinting: 0
+  _velocityFallDuringClimbing: 5
+  _velocityClimbingX: 50
+  _velocityClimbingY: 12
+  _timerClimbing:
+    _timer: 2
+  _timerForDurationSprint: 0.4
   speedJump: 10
   sprint: 10
+  _isClimbingCollider: {fileID: 634920797515672918}
 --- !u!114 &4355536741924641229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,6 +355,66 @@ MonoBehaviour:
   _OnDie:
     m_PersistentCalls:
       m_Calls: []
+--- !u!60 &5103053580660406302
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4183212690225251914}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 0.59375, y: 1.09375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.25, y: 0.78125}
+      - {x: -0.375, y: 0.46875}
+      - {x: -0.46875, y: 0.15625}
+      - {x: -0.46875, y: -0.4375}
+      - {x: -0.375, y: -0.84375}
+      - {x: -0.375, y: -1}
+      - {x: 0.46875, y: -1}
+      - {x: 0.46875, y: -0.8125}
+      - {x: 0.40625, y: 0.125}
+      - {x: 0.3125, y: 0.6875}
+      - {x: 0.28125, y: 0.78125}
+    - - {x: 0.03125, y: -0.5}
+      - {x: -0.03125, y: -0.78125}
+      - {x: 0.03125, y: -0.9375}
+      - {x: 0.0625, y: -0.90625}
+  m_UseDelaunayMesh: 0
 --- !u!1 &6578384316183808716
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4230422357845798850}
   - component: {fileID: 171475613939805123}
+  - component: {fileID: 634920797515672918}
   m_Layer: 0
   m_Name: climb
   m_TagString: Untagged
@@ -468,9 +477,25 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.34837067, y: 0}
+  m_Offset: {x: 0.48, y: 0.06}
   serializedVersion: 2
-  m_Radius: 0.15881121
+  m_Radius: 0.2
+--- !u!114 &634920797515672918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6578384316183808716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b867222f67104eb69f745dcb9e7d0db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 8
+  _collider: {fileID: 171475613939805123}

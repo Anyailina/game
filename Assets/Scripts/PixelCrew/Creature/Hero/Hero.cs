@@ -11,13 +11,15 @@ namespace PixelCrew.Creature.Hero
     public class Hero : Creature
     {
         [SerializeField] private float _velocityFallDuringClimbing;
+        [SerializeField] private StayInLayer _isGrouning;
         [SerializeField] private float _velocityClimbingX = 15f;
         [SerializeField] private float _velocityClimbingY = 12f ;
-
         [SerializeField]private Timer.Timer _timerClimbing;
         [SerializeField] private float _timerForDurationSprint;
         [SerializeField] private float speedJump = 1;
         [SerializeField] private float sprint = 1;
+        private static readonly int IsGrounding = Animator.StringToHash("isGrounding");
+        private static readonly int velocityY = Animator.StringToHash("velocityY");
         [FormerlySerializedAs("_isClimbing")] [SerializeField] private StayInLayer _isClimbingCollider;
         private static readonly int isSprintingAnimation = Animator.StringToHash("isSprinting");
         private static readonly int isClimbingAnimation = Animator.StringToHash("isClimbing");
@@ -70,9 +72,10 @@ namespace PixelCrew.Creature.Hero
 
         private void hangingHeroDuringClimbing()
         {
-            
+         
             if (_isClimbingCollider.isTrigger  && !isClimbing )
             {
+                
                
                 isClimbing = true;
                 _rigidbody.gravityScale = 0;
@@ -91,6 +94,12 @@ namespace PixelCrew.Creature.Hero
                 isJumping = false;
                 _rigidbody.velocity = new Vector2(_rigidbody.velocity.x,-_velocityFallDuringClimbing );
             }
+        }
+
+        public override void takeDamageLazer(GameObject go)
+        {
+            if (!_isSprinting)
+                base.takeDamageLazer(go);
         }
 
         private float CalculateMovementHeroY()
@@ -166,7 +175,9 @@ namespace PixelCrew.Creature.Hero
         protected override void SetAnimation()
         {
             base.SetAnimation();
+            _animatorCreature.SetBool(IsGrounding,_isGrouning.isTrigger );
             _animatorCreature.SetBool(isClimbingAnimation,isClimbing);
+            _animatorCreature.SetFloat(velocityY, _rigidbody.velocity.y);
             
         }
     }
