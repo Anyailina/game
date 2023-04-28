@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2223085636986649955}
   - component: {fileID: 4968980909242507079}
   - component: {fileID: 1452510679496553637}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec57f80a2c54a78b04b3ea9defa6d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 1
+  _hp: -1
 --- !u!58 &4968980909242507079
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -142,7 +142,8 @@ GameObject:
   - component: {fileID: 250535386019914562}
   - component: {fileID: 4454348138814620006}
   - component: {fileID: 337882997086783004}
-  m_Layer: 7
+  - component: {fileID: 7611498995090421258}
+  m_Layer: 9
   m_Name: visibleHero
   m_TagString: Finish
   m_Icon: {fileID: 0}
@@ -237,6 +238,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7611498995090421258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4158338564004588600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b867222f67104eb69f745dcb9e7d0db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 64
+  _collider: {fileID: 4454348138814620006}
 --- !u!1 &4183212690225251914
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,9 +270,10 @@ GameObject:
   - component: {fileID: 3533684864886009974}
   - component: {fileID: 1884720356043706088}
   - component: {fileID: 6238734266693406972}
-  m_Layer: 0
+  - component: {fileID: 2673937646004795270}
+  m_Layer: 9
   m_Name: mobDog
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -274,6 +292,7 @@ Transform:
   m_Children:
   - {fileID: 250535386019914562}
   - {fileID: 4559494853637839823}
+  - {fileID: 500385766835917781}
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -339,7 +358,7 @@ Animator:
   m_GameObject: {fileID: 4183212690225251914}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 044df75bbc5714fe4bf8b5d44f7342b1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5b908d0eeaa1745da8ff6eb273da1e62, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -388,7 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6671076bafb402386349a3ea2dfd2a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 100
+  _hp: 1
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -406,7 +425,67 @@ MonoBehaviour:
         m_CallState: 1
   _OnDie:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2607117057989501510}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: isDie
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6238734266693406972}
+        m_TargetAssemblyTypeName: PixelCrew.Creature.MobAI, Assembly-CSharp
+        m_MethodName: isDying
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: isDie
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5671881442468541617}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: isDie
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 4008547034314976682}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody2D, UnityEngine
+        m_MethodName: Sleep
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: isDie
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 3533684864886009974}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: isDie
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!60 &3533684864886009974
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -498,5 +577,97 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attack: {fileID: 1452510679496553637}
-  _canMovement: {fileID: 0}
+  _canMovement: {fileID: 7611498995090421258}
   _creature: {fileID: 1884720356043706088}
+--- !u!114 &2673937646004795270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4183212690225251914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46db63b9f60046a0bedd1adc9f881dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pointMovementEnemy:
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!1 &5671881442468541617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 500385766835917781}
+  - component: {fileID: 5816067914597611119}
+  m_Layer: 3
+  m_Name: Die
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &500385766835917781
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5671881442468541617}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2855121744949286745}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &5816067914597611119
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5671881442468541617}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.45, y: -0.81035656}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.65625, y: 2}
+    newSize: {x: 0.59375, y: 1.09375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3488734, y: 0.3792869}
+  m_EdgeRadius: 0

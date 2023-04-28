@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6007075712521382708}
   - component: {fileID: 2855545764311350893}
   - component: {fileID: 8179560129229194806}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,9 +65,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03, y: -0.42}
+  m_Offset: {x: -0.03, y: 0}
   serializedVersion: 2
-  m_Radius: 0.2746473
+  m_Radius: 0.2
 --- !u!114 &8179560129229194806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,7 +100,8 @@ GameObject:
   - component: {fileID: 3861187155191740254}
   - component: {fileID: 1649532967554056948}
   - component: {fileID: 4355536741924641229}
-  - component: {fileID: 5103053580660406302}
+  - component: {fileID: 3099141265427309704}
+  - component: {fileID: 2343979255511317229}
   m_Layer: 6
   m_Name: Hero
   m_TagString: Player
@@ -117,10 +118,11 @@ Transform:
   m_GameObject: {fileID: 4183212690225251914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6, y: 1.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6007075712521382708}
+  - {fileID: 4926193697820140270}
   - {fileID: 4230422357845798850}
   m_Father: {fileID: 0}
   m_RootOrder: -1
@@ -166,7 +168,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 25bd83da5ec5fe743ad82fe766982fb0, type: 3}
+  m_Sprite: {fileID: -1256223441, guid: 11ff74d64acd04ccfb9a6d5bc38b8d13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -281,6 +283,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 86b7049b-fb93-46e8-9e5d-197796b5fa32
     m_ActionName: hero/Sprint[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3861187155191740254}
+        m_TargetAssemblyTypeName: PixelCrew.Utilits.HeroInputReader, Assembly-CSharp
+        m_MethodName: attack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 955d4412-e830-4920-a70b-3cdcc94f6e36
+    m_ActionName: hero/attack[/Keyboard/x]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: hero
@@ -310,16 +328,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 326dfa94ec734e80920751f35870a84d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isGrouning: {fileID: 8179560129229194806}
+  _checkCanAttack: {fileID: 7967270357270718232}
   _timerForDamageLazer:
     _timer: 0.5
   speed: 5
+  _direction: {x: 0, y: 0}
   _isSprinting: 0
-  _velocityFallDuringClimbing: 5
-  _velocityClimbingX: 50
-  _velocityClimbingY: 12
+  _isGrouning: {fileID: 8179560129229194806}
+  _velocityClimbingX: 55
+  _velocityClimbingY: 16
   _timerClimbing:
-    _timer: 2
+    _timer: 0.5
+  _timerForChangeWall:
+    _timer: 0.1
+  _timerforAttack:
+    _timer: 1
   _timerForDurationSprint: 0.4
   speedJump: 10
   sprint: 10
@@ -336,7 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6671076bafb402386349a3ea2dfd2a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 100
+  _hp: 10
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -354,8 +377,20 @@ MonoBehaviour:
         m_CallState: 1
   _OnDie:
     m_PersistentCalls:
-      m_Calls: []
---- !u!60 &5103053580660406302
+      m_Calls:
+      - m_Target: {fileID: 2607117057989501510}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: isDie
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!60 &3099141265427309704
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -391,7 +426,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 2}
+    oldSize: {x: 0.59375, y: 1.09375}
     newSize: {x: 0.59375, y: 1.09375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -399,22 +434,26 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.25, y: 0.78125}
-      - {x: -0.375, y: 0.46875}
-      - {x: -0.46875, y: 0.15625}
-      - {x: -0.46875, y: -0.4375}
-      - {x: -0.375, y: -0.84375}
-      - {x: -0.375, y: -1}
-      - {x: 0.46875, y: -1}
-      - {x: 0.46875, y: -0.8125}
-      - {x: 0.40625, y: 0.125}
-      - {x: 0.3125, y: 0.6875}
-      - {x: 0.28125, y: 0.78125}
-    - - {x: 0.03125, y: -0.5}
-      - {x: -0.03125, y: -0.78125}
-      - {x: 0.03125, y: -0.9375}
-      - {x: 0.0625, y: -0.90625}
+    - - {x: -0.171875, y: 0.546875}
+      - {x: -0.296875, y: 0.203125}
+      - {x: -0.296875, y: -0.359375}
+      - {x: -0.234375, y: -0.546875}
+      - {x: 0.296875, y: -0.546875}
+      - {x: 0.296875, y: 0.421875}
+      - {x: 0.203125, y: 0.546875}
   m_UseDelaunayMesh: 0
+--- !u!114 &2343979255511317229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4183212690225251914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2fe4ecc9f44b2f96861023d208144e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6578384316183808716
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,9 +463,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4230422357845798850}
-  - component: {fileID: 171475613939805123}
   - component: {fileID: 634920797515672918}
-  m_Layer: 0
+  - component: {fileID: 6993869634116000268}
+  m_Layer: 7
   m_Name: climb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,15 +480,31 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6578384316183808716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.115, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2855121744949286745}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &171475613939805123
-CircleCollider2D:
+--- !u!114 &634920797515672918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6578384316183808716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b867222f67104eb69f745dcb9e7d0db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 8
+  _collider: {fileID: 6993869634116000268}
+--- !u!61 &6993869634116000268
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -480,16 +535,141 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.48, y: 0.06}
+  m_Offset: {x: 0.2670288, y: 0.1856758}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.2
---- !u!114 &634920797515672918
+  m_Size: {x: 0.09676242, y: 0.36127627}
+  m_EdgeRadius: 0
+--- !u!1 &7668826615629744096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4926193697820140270}
+  - component: {fileID: 7967270357270718232}
+  - component: {fileID: 6680456217441794019}
+  - component: {fileID: 7471209607919868999}
+  - component: {fileID: 1419828402255582738}
+  m_Layer: 7
+  m_Name: attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4926193697820140270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7668826615629744096}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.22, y: 0.09, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2855121744949286745}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7967270357270718232
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6578384316183808716}
+  m_GameObject: {fileID: 7668826615629744096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6482b10e210e488db0b0c2ee3cb5cee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 512
+  _tag: Enemy
+  radius: 0.2
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6680456217441794019}
+        m_TargetAssemblyTypeName: PixelCrew.Health.ModifyHealthComponent, Assembly-CSharp
+        m_MethodName: applyDamage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6680456217441794019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7668826615629744096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec57f80a2c54a78b04b3ea9defa6d8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hp: -1
+--- !u!58 &7471209607919868999
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7668826615629744096}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.2
+--- !u!114 &1419828402255582738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7668826615629744096}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b867222f67104eb69f745dcb9e7d0db3, type: 3}
@@ -497,5 +677,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layer:
     serializedVersion: 2
-    m_Bits: 8
-  _collider: {fileID: 171475613939805123}
+    m_Bits: 512
+  _collider: {fileID: 7471209607919868999}

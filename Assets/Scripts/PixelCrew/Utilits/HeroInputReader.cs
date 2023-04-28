@@ -33,6 +33,17 @@ namespace PixelCrew.Utilits
 
   
         }
+        public void attack(InputAction.CallbackContext call)
+        {
+            
+            if (call.started )
+            {
+                
+                _hero.checkTimerForAtttack();
+            }
+
+  
+        }
 
        
         

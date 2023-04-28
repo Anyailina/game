@@ -10,15 +10,18 @@ namespace PixelCrew.Health
         [SerializeField] private UnityEvent _OnDie;
         public void changeHp(int quantity)
         {
+            Debug.Log(quantity);
             _hp += quantity;
-            if (_hp <= 0)
+           
+             if(  quantity < 0)
             {
-                _OnDie.Invoke();
-            }
-            else
-            {
+                
                 _onDamage.Invoke();
             }
+            if (_hp <= 0)
+            {
+                 _OnDie.Invoke();
+             }
         }
     }
 }

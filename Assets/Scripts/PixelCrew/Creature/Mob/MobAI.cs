@@ -1,45 +1,59 @@
-using System;
+
 using System.Collections;
 using PixelCrew.ColliderBased;
 using PixelCrew.Creature.patrol;
-using Unity.Collections.LowLevel.Unsafe;
+
 using UnityEngine;
-using UnityEngine.Serialization;
+
 
 namespace PixelCrew.Creature
 {
     public class MobAI: MonoBehaviour
     {
-        [SerializeField] private StayInLayer _attack;
-        [SerializeField] private StayInLayer _canMovement;
-        [SerializeField ]private Creature _creature;
+        [SerializeField] protected StayInLayer _attack;
+        [SerializeField] protected StayInLayer _canMovement;
+        [SerializeField ]protected Creature _creature;
         private IEnumerator _currentCoroutine;
-        private float waitForAttack = 1f;
-        private float waitForPatroling = 1f;
-        private float waitForMovement = 0.1f;
+        protected float waitForAttack = 1f;
+        protected float waitForPatroling = 1f;
+        protected float waitForMovement = 0.1f;
         private Hero.Hero _hero;
         private Patrol _patrol;
+        private bool isDied;
         
-        private void Start()
+        private void Awake()
         {
             _hero = FindObjectOfType<Hero.Hero>();
-           
+            _patrol = GetComponent<Patrol>();
 
+
+        }
+
+        private void Start()
+        {
+            Patroling();
+        }
+
+        protected void Patroling()
+        {
+            
+           StartNextCroutine( _patrol.DoPatrol());
         }
 
         public void  HeroIsVisible()
         {
+            if (isDied) return;
             StartNextCroutine(movementToHero());
         }
 
-        private void GetDirection()
+        protected void GetDirection()
         {
             var direction = _hero.transform.position - transform.position ;
             direction.z = transform.position.z;
             _creature.SetDirection(direction.normalized);
         }
 
-        private IEnumerator movementToHero()
+        protected virtual IEnumerator movementToHero()
         {
             yield return new WaitForSeconds(waitForMovement);
             while (_canMovement.isTrigger)
@@ -47,22 +61,33 @@ namespace PixelCrew.Creature
                 if (_attack.isTrigger)
                     StartNextCroutine(Attack());
                 else
+                {
                     GetDirection();
+                }
+                  
 
                 yield return null;
             }
             yield return new WaitForSeconds(waitForPatroling);
-          
+            Patroling();
+
 
         }
 
-        private  IEnumerator Attack()
+        public void  isDying()
+        {
+            StopAllCoroutines();
+            _creature.SetDirection(Vector2.zero);
+            isDied = true;
+        }
+
+        protected   IEnumerator Attack()
         {
            
             while (_attack.isTrigger)
             {
               
-                _creature.attack();
+                _creature.attackToCreature(false);
                 yield return new WaitForSeconds(waitForAttack);
 
             }
@@ -72,7 +97,7 @@ namespace PixelCrew.Creature
         }
 
 
-        private void StartNextCroutine(IEnumerator corountine)
+        protected void StartNextCroutine(IEnumerator corountine)
         {
             
             _creature.SetDirection(Vector2.zero);

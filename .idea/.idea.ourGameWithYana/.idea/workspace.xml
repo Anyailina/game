@@ -2,29 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e352c8a0-1baa-4c2b-bc75-1f5c59cb375d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ColliderBased/CheckOverlap.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ColliderBased/CheckOverlap.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/MobAI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/MobAI.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/patrol.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/patrol/Patrol.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/patrol/Patrol.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/patrol/PatrolPoint.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/patrol/PatrolPoint.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/MobGuard.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/MobGuard/MobAIGuard.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/MobGuard/MobAIGuard.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ProjectTile.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ProjectTile/ProjectTile.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ProjectTile/ProjectTile.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Utilits/DeleteObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Utilits/DeleteObject.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Utilits/ReloadScene.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Utilits/ReloadScene.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Utilits/SpawnComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Utilits/SpawnComponent.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ourGameWithYana/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ourGameWithYana/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GG/AnimationGG/AnimatorHero.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GG/AnimationGG/AnimatorHero.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GG/AnimationGG/attack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GG/AnimationGG/attack.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GG/AnimationGG/die.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GG/AnimationGG/die.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GG/AnimationGG/fall.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GG/AnimationGG/fall.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GG/AnimationGG/idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GG/AnimationGG/idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GG/AnimationGG/jump.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GG/AnimationGG/jump.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GG/AnimationGG/run.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GG/AnimationGG/run.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GG/AnimationGG/sprint.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GG/AnimationGG/sprint.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GG/HeroInputAction.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GG/HeroInputAction.inputactions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefab/creature/Hero.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/creature/Hero.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/enviroment/Lazer.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/enviroment/Lazer.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/creature/mobDog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/creature/mobDog.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/lvl1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/lvl1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ColliderBased/EnterCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ColliderBased/EnterCollision.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ColliderBased/StayInLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ColliderBased/StayInLayer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Creature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Creature.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Hero/Hero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Hero/Hero.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/MobAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/MobAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/patrol/Patrol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/patrol/Patrol.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/patrol/PatrolPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Creature/Mob/patrol/PatrolPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Health/HealthComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Health/HealthComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Utilits/HeroInputReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Utilits/HeroInputReader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/mobDog/AnimationDog/animatorDog.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/mobDog/AnimationDog/animatorDog.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/mobDog/AnimationDog/attack.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/mobDog/AnimationDog/attack.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/mobDog/AnimationDog/die.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/mobDog/AnimationDog/die.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/mobDog/AnimationDog/fall.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/mobDog/AnimationDog/fall.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/texture/3 Cyborg/Cyborg_death.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/texture/3 Cyborg/Cyborg_death.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/texture/3/Bomb.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/texture/3/Bomb.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/texture/3/Bomb.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/texture/3/Bomb.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
@@ -84,10 +102,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="30079">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="17451">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="30079" />
+      <option name="pid" value="17451" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -114,6 +132,7 @@
       <workItem from="1681461612129" duration="20327000" />
       <workItem from="1681673067817" duration="6448000" />
       <workItem from="1681757496695" duration="7186000" />
+      <workItem from="1681846875508" duration="48387000" />
     </task>
     <servers />
   </component>
@@ -129,17 +148,56 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/PixelCrew/ColliderBased/StayInLayer.cs</url>
-          <line>20</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ColliderBased/StayInLayer.cs" initialLine="21" containingFunctionPresentation="method 'OnTriggerStay2D'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/PixelCrew/Utilits/SpawnComponent.cs</url>
+          <line>10</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Utilits/SpawnComponent.cs" initialLine="10" containingFunctionPresentation="method 'Spawn'">
             <startOffsets>
-              <option value="485" />
+              <option value="221" />
             </startOffsets>
             <endOffsets>
-              <option value="486" />
+              <option value="298" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="20" />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/PixelCrew/Utilits/SpawnComponent.cs</url>
+          <line>11</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Utilits/SpawnComponent.cs" initialLine="11" containingFunctionPresentation="method 'Spawn'">
+            <startOffsets>
+              <option value="311" />
+            </startOffsets>
+            <endOffsets>
+              <option value="363" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/PixelCrew/Utilits/SpawnComponent.cs</url>
+          <line>12</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/Utilits/SpawnComponent.cs" initialLine="12" containingFunctionPresentation="method 'Spawn'">
+            <startOffsets>
+              <option value="372" />
+            </startOffsets>
+            <endOffsets>
+              <option value="373" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/PixelCrew/ProjectTile/ProjectTile.cs</url>
+          <line>15</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/PixelCrew/ProjectTile/ProjectTile.cs" initialLine="15" containingFunctionPresentation="method 'Start'">
+            <startOffsets>
+              <option value="421" />
+            </startOffsets>
+            <endOffsets>
+              <option value="422" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
