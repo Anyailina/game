@@ -149,7 +149,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8203949852884631659}
         m_TargetAssemblyTypeName: PixelCrew.Health.ModifyHealthComponent, Assembly-CSharp
-        m_MethodName: applyDamage
+        m_MethodName: ApplyDamage
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -190,7 +190,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2587438659253164057}
         m_TargetAssemblyTypeName: PixelCrew.Laser.LazersMove, Assembly-CSharp
-        m_MethodName: checkDirectionHero
+        m_MethodName: CheckDirectionHero
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

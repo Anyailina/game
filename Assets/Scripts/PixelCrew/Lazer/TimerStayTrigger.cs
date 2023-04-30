@@ -15,41 +15,30 @@ namespace PixelCrew.Laser
         [SerializeField]private string _tag;
         [SerializeField] private float _timer = 10;
         [SerializeField] private EnterTrigger.EnterEvent _action;
-        private bool isStay;
-        private float time;
-
-
-      
-
-       
+        private bool _isStay;
+        private float _time;
+        
         private void OnTriggerEnter2D(Collider2D col)
         {
             if (col.CompareTag(_tag))
             {
-                isStay = true;
-                time = Time.time + _timer;
+                _isStay = true;
+                _time = Time.time + _timer;
                 _action.Invoke(gameObject);
-                
             }
         }
         
-
         private void OnTriggerExit2D(Collider2D other)
         {
-            isStay = false;
-           
+            _isStay = false;
         }
-        // попробовать переделать через дельта тайм
-
         private void Update()
         {
-            
-            if (isStay)
+            if (_isStay)
             {
-                if (time < Time.time)
+                if (_time < Time.time)
                 {
-                    Debug.Log("nsjdk");
-                    time += _timer;
+                    _time += _timer;
                     _action.Invoke(gameObject);
                 }
             }

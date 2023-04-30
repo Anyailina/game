@@ -6,12 +6,12 @@ namespace PixelCrew.Health
     {
         [SerializeField] private int _hp;
 
-        public void applyDamage(GameObject go)
+        public void ApplyDamage(GameObject go)
         {
             var health = go.GetComponent<HealthComponent>();
             if (health != null)
             {
-                health.changeHp(_hp);
+                health.ChangeHp(_hp);
             }
         }
     }

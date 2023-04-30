@@ -7,31 +7,36 @@ namespace PixelCrew.Creature.MobGuard
     public class MobAIGuard : MobAI
     {
         [SerializeField] private UnityEvent _action;
-        protected override IEnumerator movementToHero()
+        protected override IEnumerator MovementToHero()
         {
-            yield return new WaitForSeconds(waitForMovement);
-            StartCoroutine(attack());
-            while (_canMovement.isTrigger)
+            yield return new WaitForSeconds(_waitForMovement);
+            StartCoroutine(AttackFar());
+            while (_isVisible.IsTrigger)
             {
-                if (_attack.isTrigger)
+                if (_attack.IsTrigger)
                 {
-                    StopCoroutine(attack());
                     StartNextCroutine(Attack());
+                    StopCoroutine(AttackFar());
                 }
-                else
-                    GetDirection();
+                GetDirection();
                 yield return null;
             }
-            yield return new WaitForSeconds(waitForPatroling);
+            yield return new WaitForSeconds(_waitForPatroling);
+            StopCoroutine(AttackFar());
             Patroling();
 
         }
-
-        private IEnumerator attack()
+        
+        private IEnumerator AttackFar()
         {
-            _creature.attackToCreature(true);
-            _action.Invoke();
-            yield return new WaitForSeconds(waitForAttack);
+            
+            while (_isVisible.IsTrigger &&!_attack.IsTrigger )
+            {
+                _creature.AttackToCreature(true);
+                _action.Invoke();
+                yield return new WaitForSeconds(_waitForAttack);
+            }
         }
+
     }
 }

@@ -10,141 +10,114 @@ namespace PixelCrew.Creature.Hero
 {
     public class Hero : Creature
     {
-       
         [SerializeField] private StayInLayer _isGrouning;
         [SerializeField] private float _velocityClimbingX = 15f;
         [SerializeField] private float _velocityClimbingY = 12f ;
         [SerializeField]private Timer.Timer _timerClimbing;
-        [SerializeField] private Timer.Timer _timerForChangeWall;
         [SerializeField]private Timer.Timer _timerforAttack;
         [SerializeField] private float _timerForDurationSprint;
-        [SerializeField] private float speedJump = 1;
-        [SerializeField] private float sprint = 1;
-        private static readonly int IsGrounding = Animator.StringToHash("isGrounding");
-        private static readonly int velocityY = Animator.StringToHash("velocityY");
+        [SerializeField] private float _speedJump = 1;
+        [SerializeField] private float _sprint = 1;
+        private static readonly int _isGrounding = Animator.StringToHash("isGrounding");
+        private static readonly int _velocityY = Animator.StringToHash("velocityY");
         [SerializeField] private StayInLayer _isClimbingCollider;
-        private static readonly int isSprintingAnimation = Animator.StringToHash("isSprinting");
-        private static readonly int isClimbingAnimation = Animator.StringToHash("isClimbing");
+        private static readonly int _isSprintingAnimation = Animator.StringToHash("isSprinting");
+        private static readonly int _isClimbingAnimation = Animator.StringToHash("isClimbing");
         private float _gravityScale;
-        private bool isOnWall;
-        private bool isHang;
-        private bool isJumping;
-        private bool isChangingWall;
-
-        private bool timerForClimbingEnded;
-   
+        private bool _isOnWall;
+        private bool _isHang;
+        private bool _isJumping;
+        private bool _isChangingWall;
+        private bool timerForClimbingEnded; 
+        private bool _pressedUp => _direction.y > 0;
         
-       
-
-        private bool pressedUp => _direction.y > 0;
-
-
         protected override void Awake()
         {
             base.Awake();
             _gravityScale = _rigidbody.gravityScale;
 
         }
-        protected override void changeVelocity()
+        protected override void ChangeVelocity()
         {
-            if (!isChangingWall && !isOnWall)
+            if (!_isChangingWall && !_isOnWall)
                 _rigidbody.velocity= new Vector2(CalculateMovementHeroX(), Mathf.Round( 1000f*CalculateMovementHeroY())/ 1000f);
-            if (_isGrouning.isTrigger)
+            if (_isGrouning.IsTrigger)
             {
-                isChangingWall = false;
-                isHang = false;
+                _isChangingWall = false;
+                _isHang = false;
             }
-            checkClimbing();
+            CheckClimbing();
             ChangeWallDuringClimbing();
             
-            checkMoveOnTheWall();
-            fallHeroDuringClimbing();
-           
-            
-
+            CheckMoveOnTheWall();
+            FallHeroDuringClimbing();
         }
         
-        private void checkClimbing()
+        private void CheckClimbing()
         {
-            
-            if ( pressedUp && _isClimbingCollider.isTrigger && !_isGrouning.isTrigger )
-                isHang = true;
+            if ( _pressedUp && _isClimbingCollider.IsTrigger && !_isGrouning.IsTrigger )
+                _isHang = true;
             else
-                isHang = false;
+                _isHang = false;
         }
-
-
-
+        
         private void  ChangeWallDuringClimbing()
         {
-           
             var heroMoveToAnotherDirection = _direction.x > 0 && transform.localScale.x < 0 ||
                                              _direction.x < 0 && transform.localScale.x > 0;
-           
-            if ( isHang && heroMoveToAnotherDirection   )
+            if ( _isHang && heroMoveToAnotherDirection   )
             {
-                isChangingWall = true;
+                _isChangingWall = true;
                 _rigidbody.velocity =  new Vector2(_velocityClimbingX*_direction.x,_velocityClimbingY);
             }
             else
-                isChangingWall = false;
-            
-               
-
-
+                _isChangingWall = false;
         }
 
-        private void checkMoveOnTheWall()
+        private void CheckMoveOnTheWall()
         {
             var direction = _direction.x > 0 && transform.localScale.x > 0 ||
                             _direction.x < 0 && transform.localScale.x < 0;
-            if (isHang && direction)
+            if (_isHang && direction)
             {
-                isOnWall = true;
+                _isOnWall = true;
                 _rigidbody.gravityScale = 0;
                 _timerClimbing.Reset();
                 _rigidbody.velocity = new Vector2(0, 0);
             }
             else
-                isOnWall = false;
+                _isOnWall = false;
 
         }
 
-        private void  fallHeroDuringClimbing()
+        private void  FallHeroDuringClimbing()
         {
             var direction = (_direction.x > 0 && transform.localScale.x > 0 ||
-                            _direction.x < 0 && transform.localScale.x < 0) && pressedUp;
-            if ((isOnWall || isChangingWall) && (!_timerClimbing.checkTimer && !direction   || direction && _timerClimbing.checkTimer) )
+                            _direction.x < 0 && transform.localScale.x < 0) && _pressedUp;
+            if ((_isOnWall || _isChangingWall) && (!_timerClimbing.checkTimer && !direction   || direction && _timerClimbing.checkTimer) )
                 _rigidbody.gravityScale = _gravityScale;
         }
 
         public override void takeDamageLazer(GameObject go)
         {
-            if (!_isSprinting)
+            if (!IsSprinting)
                 base.takeDamageLazer(go);
         }
 
         private float CalculateMovementHeroY()
         {
-            
-            
-            if (_isSprinting) return 0f;
-            if (!_isSprinting ) _rigidbody.gravityScale = _gravityScale;
+            if (IsSprinting) return 0f;
+            if (!IsSprinting ) _rigidbody.gravityScale = _gravityScale;
 
-            if (isChangingWall)
+            if (_isChangingWall)
                  return _velocityClimbingY;
 
             var velocityJump = _rigidbody.velocity.y;
            
-            if (pressedUp)
+            if (_pressedUp)
             {
-                if (_isGrouning.isTrigger && _rigidbody.velocity.y < 0.01)
-                {
-                    velocityJump = speedJump;
-                 
-                }
-                    
-                
+                if (_isGrouning.IsTrigger && _rigidbody.velocity.y < 0.01)
+                    velocityJump = _speedJump;
             }
             return velocityJump;
         }
@@ -152,26 +125,21 @@ namespace PixelCrew.Creature.Hero
 
         protected override float CalculateMovementHeroX()
         {
-            
-            
             var velocityX = _rigidbody.velocity.x;
             if (_timerForDamageLazer.checkTimer)
             {
-                velocityX = _direction.x * speed;
+                velocityX = _direction.x * Speed;
             }
-            if (_isSprinting )
-                velocityX = transform.lossyScale.x > 0 ? sprint : -sprint;
+            if (IsSprinting )
+                velocityX = transform.lossyScale.x > 0 ? _sprint : -_sprint;
 
-            if (isChangingWall)
+            if (_isChangingWall)
             {
                 if (_direction.x > 0 && transform.localScale.x > 0)
-                
                     return _velocityClimbingX;
                 else
                     return -_velocityClimbingX;
-                
-                
-                
+
             }
             
             return velocityX;
@@ -185,43 +153,41 @@ namespace PixelCrew.Creature.Hero
                 _rigidbody.gravityScale = 0;
             }
             var time = Time.time + _timerForDurationSprint;
-            _isSprinting = true;
-            _animatorCreature.SetBool(isSprintingAnimation, true);
+            IsSprinting = true;
+            _animatorCreature.SetBool(_isSprintingAnimation, true);
             StartCoroutine(SprintCoroutine(time));
-
-
+            
         }
 
         private IEnumerator SprintCoroutine(float time)
         {
             while (Time.time < time)
             {
-                if (!_isSprinting)
+                if (!IsSprinting)
                 {
                     yield break;
                 }
                 yield return null;
             }
-
-            _isSprinting = false;
-            _animatorCreature.SetBool(isSprintingAnimation,false);
+            IsSprinting = false;
+            _animatorCreature.SetBool(_isSprintingAnimation,false);
         }
 
-        public void checkTimerForAtttack()
+        public void CheckTimerForAtttack()
         {
             if (_timerforAttack.checkTimer)
             {
                 _timerforAttack.Reset();
-                attackToCreature(false);
+                AttackToCreature(false);
             }
         }
 
         protected override void SetAnimation()
         {
             base.SetAnimation();
-            _animatorCreature.SetBool(IsGrounding,_isGrouning.isTrigger );
-            _animatorCreature.SetBool(isClimbingAnimation,isOnWall);
-            _animatorCreature.SetFloat(velocityY, _rigidbody.velocity.y);
+            _animatorCreature.SetBool(_isGrounding,_isGrouning.IsTrigger );
+            _animatorCreature.SetBool(_isClimbingAnimation,_isOnWall);
+            _animatorCreature.SetFloat(_velocityY, _rigidbody.velocity.y);
             
         }
     }

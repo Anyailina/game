@@ -8,11 +8,10 @@ namespace PixelCrew.Creature.patrol
     {
         [SerializeField] private Transform[] _pointMovementEnemy;
         private Creature _enemy;
-        private int currentPoint;
+        private int _currentPoint;
 
         private void Awake()
         {
-
             _enemy = GetComponent<Creature>();
         }
 
@@ -21,22 +20,17 @@ namespace PixelCrew.Creature.patrol
             while (enabled)
             {
                 if (isOnPoint())
-                {
-                    currentPoint = (int)Mathf.Repeat(currentPoint + 1, _pointMovementEnemy.Length);
-                }
-
-                var direction = _pointMovementEnemy[currentPoint].position - _enemy.transform.position;
+                    _currentPoint = (int)Mathf.Repeat(_currentPoint + 1, _pointMovementEnemy.Length);
+                var direction = _pointMovementEnemy[_currentPoint].position - _enemy.transform.position;
                 direction.y = 0;
                 _enemy.SetDirection(direction.normalized);
                 yield return null;
             }
         }
-
-
-
+        
         private bool isOnPoint()
         {
-            return (_pointMovementEnemy[currentPoint].position - _enemy.transform.position).magnitude < 1;
+            return (_pointMovementEnemy[_currentPoint].position - _enemy.transform.position).magnitude < 1;
         }
     }
 

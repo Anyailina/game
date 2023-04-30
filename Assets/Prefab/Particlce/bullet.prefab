@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 2582012401937383298}
   - component: {fileID: 5722696901595724690}
   - component: {fileID: 8080445318100064797}
+  - component: {fileID: 3474419218998593137}
+  - component: {fileID: 4438850252724188938}
   m_Layer: 0
   m_Name: bullet
   m_TagString: Untagged
@@ -111,9 +113,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!60 &2582012401937383298
 PolygonCollider2D:
@@ -187,9 +189,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeLife:
-    _timer: 2
+    _timer: 0.4
   _rigidbody: {fileID: 8740659181415873914}
-  _speed: 0.2
+  _speed: 13
   _die:
     m_PersistentCalls:
       m_Calls:
@@ -218,3 +220,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameObject: {fileID: 5561944536513695622}
+--- !u!114 &3474419218998593137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5561944536513695622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec57f80a2c54a78b04b3ea9defa6d8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hp: -1
+--- !u!114 &4438850252724188938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5561944536513695622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef00355fd234e049e4262b408d59b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tag: Player
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3474419218998593137}
+        m_TargetAssemblyTypeName: PixelCrew.Health.ModifyHealthComponent, Assembly-CSharp
+        m_MethodName: ApplyDamage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8080445318100064797}
+        m_TargetAssemblyTypeName: PixelCrew.Utilits.DeleteObject, Assembly-CSharp
+        m_MethodName: DestroyObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

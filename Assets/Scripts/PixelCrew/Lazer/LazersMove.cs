@@ -9,20 +9,18 @@ namespace PixelCrew.Laser
     public class LazersMove : MonoBehaviour
     {
         [SerializeField]private Creature.Creature _hero;
-        [SerializeField] private bool isLeftSideHero;
+        [SerializeField] private bool _isLeftSideHero;
         [SerializeField] private EnterTrigger.EnterEvent _damageHero;
         
-        public void checkDirectionHero(GameObject go)
+        public void CheckDirectionHero(GameObject go)
         {
-            if (!_hero._isSprinting)
+            if (!_hero.IsSprinting)
             {
                 var directionIsRight = transform.position.x - _hero.transform.position.x > 0;
-                if (isLeftSideHero && directionIsRight || !isLeftSideHero && !directionIsRight)
+                if (_isLeftSideHero && directionIsRight || !_isLeftSideHero && !directionIsRight)
                 {
-                   
-                    _hero.changeVelocityLazer();
+                    _hero.ChangeVelocityLazer();
                     _damageHero.Invoke(go);
-                    
                 }
                 
             }

@@ -287,7 +287,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3861187155191740254}
         m_TargetAssemblyTypeName: PixelCrew.Utilits.HeroInputReader, Assembly-CSharp
-        m_MethodName: attack
+        m_MethodName: AttackReader
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -605,7 +605,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6680456217441794019}
         m_TargetAssemblyTypeName: PixelCrew.Health.ModifyHealthComponent, Assembly-CSharp
-        m_MethodName: applyDamage
+        m_MethodName: ApplyDamage
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

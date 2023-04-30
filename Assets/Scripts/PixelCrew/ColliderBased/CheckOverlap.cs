@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace PixelCrew
 {
@@ -9,15 +10,12 @@ namespace PixelCrew
     {
         [SerializeField] private  LayerMask _layer;
         [SerializeField] private string _tag;
-        [SerializeField] private float radius;
+        [SerializeField] private float _radius;
         [SerializeField] private OverlapEvent _action;
-
-  
-
-        public void check()
+        
+        public void Check()
         {
-            
-            var gos = Physics2D.OverlapCircleAll(transform.position, radius, _layer);
+            var gos = Physics2D.OverlapCircleAll(transform.position, _radius, _layer);
             foreach (var go in gos)
             {
                 if (go.gameObject.CompareTag(_tag))
@@ -29,10 +27,10 @@ namespace PixelCrew
         public class OverlapEvent : UnityEvent<GameObject>
         {
         }
-
+        
         private void OnDrawGizmos()
         {
-            Gizmos.DrawSphere(transform.position,radius);
+            Gizmos.DrawSphere(transform.position,_radius);
         }
     }
     

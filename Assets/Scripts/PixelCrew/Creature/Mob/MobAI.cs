@@ -4,29 +4,28 @@ using PixelCrew.ColliderBased;
 using PixelCrew.Creature.patrol;
 
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 namespace PixelCrew.Creature
 {
     public class MobAI: MonoBehaviour
     {
-        [SerializeField] protected StayInLayer _attack;
-        [SerializeField] protected StayInLayer _canMovement;
+        [SerializeField] protected StayInLayer _attack; 
+        [SerializeField] protected StayInLayer _isVisible;
         [SerializeField ]protected Creature _creature;
         private IEnumerator _currentCoroutine;
-        protected float waitForAttack = 1f;
-        protected float waitForPatroling = 1f;
-        protected float waitForMovement = 0.1f;
+        protected float _waitForAttack = 1f;
+        protected float _waitForPatroling = 1f;
+        protected float _waitForMovement = 0.5f;
         private Hero.Hero _hero;
         private Patrol _patrol;
-        private bool isDied;
+        private bool _isDied;
         
         private void Awake()
         {
             _hero = FindObjectOfType<Hero.Hero>();
             _patrol = GetComponent<Patrol>();
-
-
         }
 
         private void Start()
@@ -36,14 +35,14 @@ namespace PixelCrew.Creature
 
         protected void Patroling()
         {
-            
-           StartNextCroutine( _patrol.DoPatrol());
+            StartNextCroutine( _patrol.DoPatrol());
         }
 
         public void  HeroIsVisible()
         {
-            if (isDied) return;
-            StartNextCroutine(movementToHero());
+         
+            if (_isDied) return;
+            StartNextCroutine(MovementToHero());
         }
 
         protected void GetDirection()
@@ -53,59 +52,49 @@ namespace PixelCrew.Creature
             _creature.SetDirection(direction.normalized);
         }
 
-        protected virtual IEnumerator movementToHero()
+        protected virtual IEnumerator MovementToHero()
         {
-            yield return new WaitForSeconds(waitForMovement);
-            while (_canMovement.isTrigger)
+            yield return new WaitForSeconds(_waitForMovement);
+            while (_isVisible.IsTrigger)
             {
-                if (_attack.isTrigger)
+                if (_attack.IsTrigger)
                     StartNextCroutine(Attack());
                 else
-                {
                     GetDirection();
-                }
-                  
-
+                
                 yield return null;
             }
-            yield return new WaitForSeconds(waitForPatroling);
+            yield return new WaitForSeconds(_waitForPatroling);
             Patroling();
-
-
         }
 
-        public void  isDying()
+        public  virtual void  IsDying()
         {
-            StopAllCoroutines();
+            StopAllCoroutines(); ;
             _creature.SetDirection(Vector2.zero);
-            isDied = true;
+            _isDied = true;
         }
 
         protected   IEnumerator Attack()
         {
-           
-            while (_attack.isTrigger)
+            while (_attack.IsTrigger)
             {
-              
-                _creature.attackToCreature(false);
-                yield return new WaitForSeconds(waitForAttack);
-
+                _creature.AttackToCreature(false);
+                yield return new WaitForSeconds(_waitForAttack);
             }
-           
-            StartNextCroutine(movementToHero());
+            StartNextCroutine(MovementToHero());
             
         }
 
 
         protected void StartNextCroutine(IEnumerator corountine)
         {
-            
             _creature.SetDirection(Vector2.zero);
-            
             if (_currentCoroutine != null)
                 StopCoroutine(_currentCoroutine);
             _currentCoroutine = corountine;
             StartCoroutine(corountine);
+            Debug.Log(corountine);
         }
     }
 }
