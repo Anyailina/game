@@ -63,8 +63,7 @@ namespace PixelCrew.Creature.Hero
         
         private void  ChangeWallDuringClimbing()
         {
-            var heroMoveToAnotherDirection = _direction.x > 0 && transform.localScale.x < 0 ||
-                                             _direction.x < 0 && transform.localScale.x > 0;
+            var heroMoveToAnotherDirection = _direction.x * transform.localScale.x  < 0;
             if ( _isHang && heroMoveToAnotherDirection   )
             {
                 _isChangingWall = true;
@@ -76,8 +75,7 @@ namespace PixelCrew.Creature.Hero
 
         private void CheckMoveOnTheWall()
         {
-            var direction = _direction.x > 0 && transform.localScale.x > 0 ||
-                            _direction.x < 0 && transform.localScale.x < 0;
+            var direction = _direction.x * transform.localScale.x > 0;
             if (_isHang && direction)
             {
                 _isOnWall = true;
@@ -92,8 +90,7 @@ namespace PixelCrew.Creature.Hero
 
         private void  FallHeroDuringClimbing()
         {
-            var direction = (_direction.x > 0 && transform.localScale.x > 0 ||
-                            _direction.x < 0 && transform.localScale.x < 0) && _pressedUp;
+            var direction = _direction.x * transform.localScale.x > 0 && _pressedUp;
             if ((_isOnWall || _isChangingWall) && (!_timerClimbing.checkTimer && !direction   || direction && _timerClimbing.checkTimer) )
                 _rigidbody.gravityScale = _gravityScale;
         }

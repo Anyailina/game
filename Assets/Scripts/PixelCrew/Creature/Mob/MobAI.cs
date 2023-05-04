@@ -4,6 +4,7 @@ using PixelCrew.ColliderBased;
 using PixelCrew.Creature.patrol;
 
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 
@@ -11,14 +12,15 @@ namespace PixelCrew.Creature
 {
     public class MobAI: MonoBehaviour
     {
-        [SerializeField] protected StayInLayer _attack; 
+        [SerializeField] protected StayInLayer _canAttackCollider; 
         [SerializeField] protected StayInLayer _isVisible;
         [SerializeField ]protected Creature _creature;
+        [SerializeField] protected UnityEvent _spawnAction;
         private IEnumerator _currentCoroutine;
         protected float _waitForAttack = 1f;
         protected float _waitForPatroling = 1f;
         protected float _waitForMovement = 0.5f;
-        private Hero.Hero _hero;
+        protected Hero.Hero _hero;
         private Patrol _patrol;
         private bool _isDied;
         
@@ -45,7 +47,7 @@ namespace PixelCrew.Creature
             StartNextCroutine(MovementToHero());
         }
 
-        protected void GetDirection()
+        protected virtual void GetDirection()
         {
             var direction = _hero.transform.position - transform.position ;
             direction.z = transform.position.z;
@@ -57,7 +59,7 @@ namespace PixelCrew.Creature
             yield return new WaitForSeconds(_waitForMovement);
             while (_isVisible.IsTrigger)
             {
-                if (_attack.IsTrigger)
+                if (_canAttackCollider.IsTrigger)
                     StartNextCroutine(Attack());
                 else
                     GetDirection();
@@ -77,7 +79,7 @@ namespace PixelCrew.Creature
 
         protected   IEnumerator Attack()
         {
-            while (_attack.IsTrigger)
+            while (_canAttackCollider.IsTrigger)
             {
                 _creature.AttackToCreature(false);
                 yield return new WaitForSeconds(_waitForAttack);
@@ -85,6 +87,8 @@ namespace PixelCrew.Creature
             StartNextCroutine(MovementToHero());
             
         }
+       
+
 
 
         protected void StartNextCroutine(IEnumerator corountine)
@@ -94,7 +98,6 @@ namespace PixelCrew.Creature
                 StopCoroutine(_currentCoroutine);
             _currentCoroutine = corountine;
             StartCoroutine(corountine);
-            Debug.Log(corountine);
         }
     }
 }
